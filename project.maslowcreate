@@ -4,9 +4,72 @@
     "x": 0,
     "y": 0,
     "uniqueID": 482596,
-    "ioValues": [],
+    "ioValues": [
+        {
+            "name": "Arc",
+            "ioValue": 10
+        },
+        {
+            "name": "thickness",
+            "ioValue": 10
+        },
+        {
+            "name": "Piece Width",
+            "ioValue": 10
+        },
+        {
+            "name": "Input745052",
+            "ioValue": 10
+        }
+    ],
     "topLevel": true,
     "allAtoms": [
+        {
+            "atomType": "Input",
+            "name": "thickness",
+            "x": 0.013333333333333334,
+            "y": 0.3498542274052478,
+            "uniqueID": 933110,
+            "ioValues": []
+        },
+        {
+            "atomType": "Input",
+            "name": "Piece Width",
+            "x": 0.013333333333333334,
+            "y": 0.5,
+            "uniqueID": 666089,
+            "ioValues": []
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.3861386138613861,
+            "y": 0.47813411078717205,
+            "uniqueID": 602767,
+            "ioValues": [
+                {
+                    "name": "arc=180",
+                    "ioValue": 10
+                }
+            ],
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(thickness,width,arc=180){\n\nreturn Arc(width, arc).close().sweep(Circle(thickness));\n}\n\nreturn main(thickness,width,arc)"
+        },
+        {
+            "atomType": "Input",
+            "name": "Input745052",
+            "x": 0.013333333333333334,
+            "y": 0.6209912536443148,
+            "uniqueID": 812082,
+            "ioValues": []
+        },
+        {
+            "atomType": "Input",
+            "name": "Arc",
+            "x": 0.013333333333333334,
+            "y": 0.7755102040816326,
+            "uniqueID": 226189,
+            "ioValues": []
+        },
         {
             "atomType": "Output",
             "name": "Output",
@@ -15,6 +78,16 @@
             "ioValues": []
         }
     ],
-    "allConnectors": [],
-    "fileTypeVersion": 1
+    "allConnectors": [
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "arc=180",
+            "ap2Primary": false,
+            "ap1ID": 226189,
+            "ap2ID": 602767
+        }
+    ],
+    "fileTypeVersion": 1,
+    "filetypeVersion": 1,
+    "circleSegmentSize": 2
 }
