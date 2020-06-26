@@ -7,18 +7,18 @@
     "ioValues": [
         {
             "name": "Arc",
-            "ioValue": 10
+            "ioValue": 180
         },
         {
             "name": "thickness",
-            "ioValue": 10
+            "ioValue": 3
         },
         {
             "name": "Piece Width",
-            "ioValue": 10
+            "ioValue": 4
         },
         {
-            "name": "Input745052",
+            "name": "width",
             "ioValue": 10
         }
     ],
@@ -28,7 +28,7 @@
             "atomType": "Input",
             "name": "thickness",
             "x": 0.013333333333333334,
-            "y": 0.3498542274052478,
+            "y": 0.32653061224489793,
             "uniqueID": 933110,
             "ioValues": []
         },
@@ -43,22 +43,30 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.3861386138613861,
-            "y": 0.47813411078717205,
+            "x": 0.4592536176694592,
+            "y": 0.42857142857142855,
             "uniqueID": 602767,
             "ioValues": [
                 {
-                    "name": "arc=180",
+                    "name": "thickness",
+                    "ioValue": 3
+                },
+                {
+                    "name": "width",
                     "ioValue": 10
+                },
+                {
+                    "name": "arc",
+                    "ioValue": 180
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(thickness,width,arc=180){\n\nreturn Arc(width, arc).close().sweep(Circle(thickness));\n}\n\nreturn main(thickness,width,arc)"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\n\nfunction main(thickness,width,arc){\n\nif(arc==null){arc = 180}\n\nreturn Arc(width, arc).close().sweep(Circle(thickness));\n}\n\nreturn main(thickness,width,arc)"
         },
         {
             "atomType": "Input",
-            "name": "Input745052",
+            "name": "width",
             "x": 0.013333333333333334,
-            "y": 0.6209912536443148,
+            "y": 0.7026239067055393,
             "uniqueID": 812082,
             "ioValues": []
         },
@@ -71,6 +79,19 @@
             "ioValues": []
         },
         {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.6397562833206397,
+            "y": 0.717201166180758,
+            "uniqueID": 179344,
+            "ioValues": [
+                {
+                    "name": "height",
+                    "ioValue": 4
+                }
+            ]
+        },
+        {
             "atomType": "Output",
             "name": "Output",
             "x": 0.9847677075399847,
@@ -81,10 +102,44 @@
     "allConnectors": [
         {
             "ap1Name": "number or geometry",
-            "ap2Name": "arc=180",
+            "ap2Name": "thickness",
+            "ap2Primary": false,
+            "ap1ID": 933110,
+            "ap2ID": 602767
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": 666089,
+            "ap2ID": 179344
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 602767,
+            "ap2ID": 179344
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "width",
+            "ap2Primary": false,
+            "ap1ID": 812082,
+            "ap2ID": 602767
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "arc",
             "ap2Primary": false,
             "ap1ID": 226189,
             "ap2ID": 602767
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 179344
         }
     ],
     "fileTypeVersion": 1,
