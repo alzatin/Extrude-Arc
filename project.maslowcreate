@@ -6,10 +6,6 @@
     "uniqueID": 482596,
     "ioValues": [
         {
-            "name": "Arc",
-            "ioValue": 180
-        },
-        {
             "name": "thickness",
             "ioValue": 3
         },
@@ -20,6 +16,10 @@
         {
             "name": "width",
             "ioValue": 10
+        },
+        {
+            "name": "Arc",
+            "ioValue": 180
         }
     ],
     "topLevel": true,
@@ -60,7 +60,7 @@
                     "ioValue": 180
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\n\nfunction main(thickness,width,arc){\n\nif(arc==null){arc = 180}\n\nreturn Arc(width, arc).close().sweep(Circle(thickness));\n}\n\nreturn main(thickness,width,arc)"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\n\nfunction main(thickness,width,arc){\n\nif(arc==null){arc = 180}\n\nreturn Arc(width, arc).close().sweep(Circle(thickness)).Center();\n}\n\nreturn main(thickness,width,arc)"
         },
         {
             "atomType": "Input",
@@ -81,7 +81,7 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.6397562833206397,
+            "x": 0.638994668697639,
             "y": 0.717201166180758,
             "uniqueID": 179344,
             "ioValues": [
