@@ -43,8 +43,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.4569687738004569,
-            "y": 0.446064139941691,
+            "x": 0.4562071591774562,
+            "y": 0.33527696793002915,
             "uniqueID": 602767,
             "ioValues": [
                 {
@@ -60,7 +60,7 @@
                     "ioValue": 180
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\n\nfunction main(thickness,width,arc){\n\nif(arc==null){arc = 180}\n\nreturn Arc(width, arc).close().sweep(Circle(thickness));\n}\n\nreturn main(thickness,width,arc)"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\n\nfunction main(thickness,width,arc){\n\nif(arc==null){arc = 180}\n\nreturn Arc(width, arc).close().sweep(Circle(thickness)).center();\n}\n\nreturn main(thickness,width,arc)"
         },
         {
             "atomType": "Input",
